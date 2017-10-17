@@ -1,0 +1,10 @@
+body {
+  overflow-x: hidden;
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: black;
+}
+
+#wrap {
+  background-color: white;
+}

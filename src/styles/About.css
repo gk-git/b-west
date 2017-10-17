@@ -1,0 +1,35 @@
+.image1 {
+
+}
+
+.about-image-block .image2 {
+    overflow-x: hidden;
+    margin-left: 29%;
+}
+
+.about-image-block .image2 img {
+}
+
+.about-image-block {
+    position: relative;
+}
+
+.about-image-block .image1 {
+    width: 35%;
+    position: absolute;
+    z-index: 33;
+    top: 15%;
+}
+
+.about-image-block .image1 img {
+    width: 100%;
+
+}
+
+.about-us.dark-pattern .title, .about-us.dark-pattern .subtitle, .about-us.dark-pattern .content {
+    color: white;
+}
+
+.about-us.dark-pattern .content {
+    font-size: 1.6em;
+}
