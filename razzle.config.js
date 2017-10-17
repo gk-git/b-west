@@ -1,8 +1,11 @@
 'use strict';
 var ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
+module.exports = {
+    modify: require("razzle-heroku"),
+};
 
 module.exports = {
-    modify( config, { target, dev }, webpack ) {
+    modify(config, {target, dev}, webpack) {
 
         /**
          * Allow markdown loading
@@ -19,10 +22,7 @@ module.exports = {
             ]
         };
 
-        const additionalLoader = [
-
-
-        ]
+        const additionalLoader = []
 
         const fileLoaderIndex = config.module.rules.findIndex(
             rule => rule.exclude
@@ -40,20 +40,21 @@ module.exports = {
          * modules
          */
 
-        // insert modernizr
+            // insert modernizr
         var modernizr_config = dev ? {} : {
-            minify: {
-                output: {
-                    comments: true,
-                    beautify: true
+                minify: {
+                    output: {
+                        comments: true,
+                        beautify: true
+                    }
                 }
             }
-        }
 
         config.plugins.push(new ModernizrWebpackPlugin(modernizr_config))
 
         config.context = __dirname
-        const node_conf ={ __filename: true,
+        const node_conf = {
+            __filename: true,
             __dirname: true
         }
 
