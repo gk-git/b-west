@@ -2,10 +2,17 @@
   "name": "my-razzle-app",
   "version": "0.1.0",
   "license": "MIT",
+  "engines": {
+    "node": "8.1.x",
+    "npm": "5.4.0",
+    "yarn": "0.28.4"
+  },
   "scripts": {
-    "start": "razzle start",
+    "dev": "razzle start",
     "build": "razzle build",
+    "start": "NODE_ENV=production node build/server.js",
     "test": "razzle test --env=jsdom",
+    "heroku-postbuild": "yarn run build",
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
