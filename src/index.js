@@ -8,13 +8,14 @@ let currentApp = app;
 server.listen(process.env.PORT || 5000);
 
 if (module.hot) {
-  console.log('✅  Server-side HMR Enabled!');
+    console.log('✅  Server-side HMR Enabled!');
 
-  module.hot.accept('./server', () => {
-    console.log('🔁  HMR Reloading `./server`...');
-    server.removeListener('request', currentApp);
-    const newApp = require('./server').default;
-    server.on('request', newApp);
-    currentApp = newApp;
-  });
+    console.log("up and running on port " + process.env.PORT);
+    module.hot.accept('./server', () => {
+        console.log('🔁  HMR Reloading `./server`...');
+        server.removeListener('request', currentApp);
+        const newApp = require('./server').default;
+        server.on('request', newApp);
+        currentApp = newApp;
+    });
 }
