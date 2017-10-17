@@ -473,10 +473,10 @@ class App extends React.Component {
                     image: {src: '/product_3.jpg', alt: 'product 1'},
                     classContainer: 'col-sm-4 col-xs-6', description: '<p>This product is </p>'
                 }
-            ]
-            ,
+            ],
             subscriberBanner: {
-                display: true
+                display: true,
+                mailchimpUrl: ''
             },
             findAStoereBanner: {
                 backgroundImage: '/find-a-store.jpg'
